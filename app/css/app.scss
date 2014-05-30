@@ -37,6 +37,15 @@ body {
   border-top: 3px solid;
   background-color: white;
   margin: 10px;
+  display: block;
+
+  &.is-finished {
+    opacity: 0.4;
+  }
+
+  &.is-running {
+    background-color: rgb(254, 255, 223);
+  }
 }
 
 .job-card-content {

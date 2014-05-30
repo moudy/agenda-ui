@@ -5,7 +5,13 @@ App.JobController = Em.ObjectController.extend({
     var next = moment.utc(this.get('nextRunAt'));
     var now = moment.utc();
     var diff = next.diff(now);
-    return Math.floor(diff / 1000);
+    var ret = Math.floor(diff / 1000);
+    if (ret < 0) ret = 0;
+    return ret;
   }.property('clock.second')
+
+, isRunning: Em.computed.bool('lockedAt')
+
 });
+
 

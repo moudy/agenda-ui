@@ -1,4 +1,4 @@
-var ONE_SECOND = 1000;
+var TICK_INTERVAL = 500;
 
 App.Clock = Em.Object.extend({
   second: null
@@ -21,7 +21,7 @@ App.Clock = Em.Object.extend({
     });
 
     var self = this;
-    setTimeout(function(){ self.tick(); }, ONE_SECOND);
+    setTimeout(function(){ self.tick(); }, TICK_INTERVAL);
   }
 
 });

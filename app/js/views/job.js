@@ -3,6 +3,11 @@ App.JobView = Em.View.extend({
 
 , classNames: 'job-card'
 
+, classNameBindings: [
+    'controller.isFinished'
+  , 'controller.isRunning'
+  ]
+
 , controllerBinding: 'content'
 
 });
