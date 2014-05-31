@@ -1,6 +1,6 @@
 # Agenda UI
 
-A UI to view [Agneda](https://github.com/rschmukler/agenda) jobs.
+A UI to view [Agenda](https://github.com/rschmukler/agenda) jobs.
 
 ### This is still very much a work in progress
 It's better than nothing but still pretty rough. I'm open to suggestions and pull requests.
