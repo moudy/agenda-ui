@@ -1,5 +1,5 @@
 var env = {};
-env[process.env.NODE_ENV] = true;
+env[process.env.BROCCOLI_ENV] = true;
 
 // Plugins
 var mergeTrees = require('broccoli-merge-trees');

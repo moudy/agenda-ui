@@ -10,6 +10,7 @@
     <script>
       var ENV = {};
       ENV.namespace = "<%= namespace %>";
+      ENV.options = JSON.parse('<%-JSON.stringify(options)%>');
     </script>
     <script src="/<%= namespace %>/assets/app.js"></script>
     <script src="/<%= namespace %>/assets/templates.js"></script>

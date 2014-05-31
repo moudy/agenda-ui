@@ -1,9 +1,11 @@
-var POLL_INTERVAL = 1000;
+var POLL_INTERVAL = global.ENV.options.poll;
 
 App.IndexRoute = Em.Route.extend({
 
   activate: function () {
-    this.timer = setInterval(this.onPoll.bind(this), POLL_INTERVAL);
+    if (POLL_INTERVAL) {
+      this.timer = setInterval(this.onPoll.bind(this), POLL_INTERVAL);
+    }
   }
 
 , model: function () {

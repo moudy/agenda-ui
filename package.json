@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "nodemon --ignore tmp/ --ignore node_modules/ dev.js"
+    "dev": "nodemon --ignore tmp/ --ignore node_modules/ dev.js",
+    "prepublish": "rm -rf ./assets && BROCCOLI_ENV=production broccoli build assets"
   },
   "keywords": [
     "agenda"
@@ -14,8 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "agenda": "^0.6.12",
+    "broccoli": "^0.12.1",
     "broccoli-browserify": "^0.1.0",
     "broccoli-clean-css": "^0.1.5",
+    "broccoli-cli": "0.0.1",
     "broccoli-merge-trees": "^0.1.3",
     "broccoli-middleware": "0.0.1",
     "broccoli-sass": "^0.1.4",
