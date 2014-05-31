@@ -27,7 +27,7 @@ agenda._db.remove(function () {
   agenda.every('1 minute', 'update users', { userId: 'bar'});
 
   app.use('/agenda-ui/assets', require('broccoli-middleware'));
-  app.use('/agenda-ui', agendaUI(agenda, {poll: false}));
+  app.use('/agenda-ui', agendaUI(agenda, {poll: 1000}));
 
   agenda.start();
 

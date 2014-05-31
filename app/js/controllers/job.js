@@ -12,6 +12,16 @@ App.JobController = Em.ObjectController.extend({
 
 , isRunning: Em.computed.bool('lockedAt')
 
+, actions: {
+    toggleDataExpand: function () {
+      this.toggleProperty('dataExpanded');
+    }
+
+  , toggleDetailsExpand: function () {
+      this.toggleProperty('detailsExpanded');
+    }
+  }
+
 });
 
 

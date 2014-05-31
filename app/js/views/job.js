@@ -10,15 +10,5 @@ App.JobView = Em.View.extend({
 
 , controllerBinding: 'content'
 
-, actions: {
-    toggleDataExpand: function () {
-      this.toggleProperty('dataExpanded');
-    }
-
-  , toggleDetailsExpand: function () {
-      this.toggleProperty('detailsExpanded');
-    }
-  }
-
 });
 

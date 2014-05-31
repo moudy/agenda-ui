@@ -1,7 +1,7 @@
 <div class='job-card-content'>
   <h3 class='job-card-name'>
     {{name}}
-    <a href='#' {{action 'toggleDetailsExpand' target='view'}} class='details-link'>Details</a>
+    <a href='#' {{action 'toggleDetailsExpand'}} class='details-link'>Details</a>
   </h3>
 
   {{#if nextRunAtFromNow}}
@@ -10,7 +10,7 @@
   </div>
   {{/if}}
 
-  <div {{bind-attr class=':job-details view.detailsExpanded:is-expanded'}}>
+  <div {{bind-attr class=':job-details detailsExpanded:is-expanded'}}>
     <div class='details'>
       <div>
         <label>_id</label> {{id}}
@@ -40,7 +40,7 @@
 
   </div>
 
-  <div {{action 'toggleDataExpand' target='view'}} {{bind-attr class=':job-data-preview view.dataExpanded:is-expanded'}}>{{highlight-object data null 2}}</div>
+  <div {{action 'toggleDataExpand'}} {{bind-attr class=':job-data-preview dataExpanded:is-expanded'}}>{{highlight-object data null 2}}</div>
 </div>
 
 {{#if isRepeating}}
