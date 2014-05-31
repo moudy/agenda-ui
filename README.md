@@ -12,7 +12,7 @@ npm install --save agenda-ui
 
 ### Usage
 The Agenda UI is middleware you can mount at a path in your express app.
-```
+```js
 var express = require('express');
 var Agenda = require('agenda');
 var agendaUI = require('agenda-ui');
