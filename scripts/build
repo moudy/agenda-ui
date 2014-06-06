@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+rm -rf ./assets
+mkdir -p ./assets
+cd app
+ember build
+mv ./dist/assets/app.* ../assets/

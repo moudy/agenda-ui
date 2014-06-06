@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "nodemon --ignore tmp/ --ignore node_modules/ dev.js",
-    "prepublish": "rm -rf ./assets && BROCCOLI_ENV=production broccoli build assets"
+    "dev": "nodemon --ignore tmp/ --ignore app/ --ignore node_modules/ dev.js",
+    "prepublish": "./scripts/build"
   },
   "keywords": [
     "agenda"
