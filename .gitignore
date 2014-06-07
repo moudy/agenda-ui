@@ -3,4 +3,7 @@ node_modules/
 .sass-cache/
 /tmp/
 /assets
+/app/vendor
+/app/dist
+/app/tmp
 npm-debug.log
