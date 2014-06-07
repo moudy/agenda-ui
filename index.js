@@ -16,10 +16,17 @@ module.exports = function (agenda, options) {
 
   var router = express.Router();
 
-  router.get('/', function (req, res) {
+  router.get('/:definitionId?', function (req, res) {
     var data = {};
-    data.ASSET_HOST = '//localhost:4200';
+
     options.NAMESPACE = req.originalUrl.replace(/(^\/|\/$)/g, '');
+
+    if(options.ASSET_HOST) {
+      options.ASSETS_NAMESPACE = options.ASSET_HOST + '/' + options.NAMESPACE;
+    } else {
+      options.ASSETS_NAMESPACE = '/' + options.NAMESPACE;
+    }
+
     data.options = options;
 
     ejs.renderFile(indexHTML, data, function (err, html) {
@@ -28,7 +35,7 @@ module.exports = function (agenda, options) {
   });
 
   app.use('/assets', express.static(path.join(__dirname, 'assets')));
-  app.use('/jobs', api(agenda));
+  app.use(api(agenda));
   app.use(router);
 
   return app;

@@ -1,0 +1,94 @@
+@import 'variables';
+
+.job-card {
+  border: 1px solid $border-color;
+  background-color: white;
+  margin-bottom: 30px;
+  display: block;
+  position: relative;
+
+  .repeat-icon {
+    $size: 20px;
+    width: $size;
+    height: $size;
+    right: - $size - 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right:
+  }
+
+  &.is-finished {
+    opacity: 0.4;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.is-running {
+    background-color: rgb(254, 255, 223);
+  }
+}
+
+.job-card-content {
+  padding: 10px;
+  position: relative;
+  .next-run-counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
+
+.job-card-name {
+  font-weight: 200;
+  margin: 0;
+  @include font-size(1.6);
+}
+
+.job-data-preview {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  word-wrap: normal;
+  background-color: #f8f8f8;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  @include font-size(1.3);
+
+  &.is-expanded {
+    white-space: pre;
+  }
+}
+
+.details-link {
+  text-decoration: none;
+  color: $light-text-color;
+  @include font-size(1.1);
+}
+
+.job-details {
+  .details {
+    display: none;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    @include font-size(1.3);
+  }
+
+  label {
+    width: 110px;
+    text-align: right;
+    display: inline-block;
+    color: #999;
+    margin-right: 4px;
+  }
+
+  &.is-expanded .details {
+    display: block;
+  }
+}
+

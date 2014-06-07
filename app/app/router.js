@@ -1,8 +1,13 @@
 var Router = Ember.Router.extend({
-  location: ENV.locationType
+
+  //location: 'auto'
+
+  rootUrl: '/' + Ember.ENV.NAMESPACE + '/'
+
 });
 
 Router.map(function() {
+  this.route('definition', {path: '/:definition_id'});
 });
 
 export default Router;

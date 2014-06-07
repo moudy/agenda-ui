@@ -1,4 +1,4 @@
-var JobsController = Ember.ArrayController.extend({
+export default Ember.ArrayController.extend({
 
   itemController: 'job'
 
@@ -24,4 +24,3 @@ var JobsController = Ember.ArrayController.extend({
 
 });
 
-export default JobsController;

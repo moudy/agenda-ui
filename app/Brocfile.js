@@ -10,7 +10,11 @@ var app = new EmberApp({
     options: {}
   },
 
-  getEnvJSON: require('./config/environment')
+  getEnvJSON: require('./config/environment'),
+
+ fingerprint: {
+    exclude: ['app.css', 'app.js']
+  }
 });
 
 // Use this to add additional libraries to the generated output files.

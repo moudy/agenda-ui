@@ -1,0 +1,21 @@
+<header class='header'>
+<div class='content-width header-content'>
+  <h1 class='app-title'>
+    Agenda UI
+  </h1>
+
+  <div class='filter-controls'>
+
+    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control isFutureFilter:is-active'}}>
+      Future
+    <a>
+    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control isCompleteFilter:is-active'}}>
+      Completed
+    <a>
+    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control isFailedFilter:is-active'}}>
+      Failed
+    <a>
+
+  </div>
+</div>
+</header>

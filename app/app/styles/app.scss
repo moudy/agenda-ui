@@ -1,9 +1,12 @@
 @import './vendor/normalize';
 @import './vendor/highlight';
+@import 'variables';
+@import 'mixins';
 
-@mixin font-size($sizeValue: 1.6) {
-  font-size: ($sizeValue * 10) + px;
-  font-size: $sizeValue + rem;
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul {
@@ -12,7 +15,6 @@ ul {
   padding: 0;
 }
 
-$background-color: #ededed;
 
 html {
   font-size: 62.5%;
@@ -24,103 +26,26 @@ html, body {
 
 body {
   color: #444;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 200;
   @include font-size(1.4);
 }
 
 .content-width {
-  max-width: 700px;
+  max-width: $content-width;
   margin-right: auto;
   margin-left: auto;
 }
 
-.job-card {
-  border-top: 3px solid #999;
-  background-color: white;
-  margin: 20px 0;
-  display: block;
-  position: relative;
-
-  .repeat-icon {
-    $size: 20px;
-    width: $size;
-    height: $size;
-    right: - $size - 10px;
-    display: block;
-    position: absolute;
-    top: 0;
-    right:
-  }
-
-  &.is-finished {
-    opacity: 0.4;
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &.is-running {
-    background-color: rgb(254, 255, 223);
-  }
+.content {
+  padding: 30px 10px;
 }
 
-.job-card-content {
-  padding: 10px;
-  position: relative;
-  .next-run-counter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-  }
+.jobs-feed {
+  margin-left: $sidebar-width + 20px;
 }
 
-.job-card-name {
-  font-weight: 200;
-  margin: 0 0 10px;
-  @include font-size(1.6);
-}
-
-.job-data-preview {
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
-  word-wrap: normal;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-  white-space: nowrap;
-  cursor: pointer;
-  @include font-size(1.3);
-
-  &.is-expanded {
-    white-space: pre;
-  }
-}
-
-.details-link {
-  text-decoration: none;
-  @include font-size(1.1);
-}
-
-.job-details {
-  .details {
-    display: none;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    @include font-size(1.3);
-  }
-
-  label {
-    width: 110px;
-    text-align: right;
-    display: inline-block;
-    color: #999;
-    margin-right: 4px;
-  }
-
-  &.is-expanded .details {
-    display: block;
-  }
-}
+@import 'header';
+@import 'sidebar';
+@import 'job-card';

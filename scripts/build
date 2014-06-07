@@ -3,5 +3,5 @@
 rm -rf ./assets
 mkdir -p ./assets
 cd app
-ember build
+ember build --environment=production
 mv ./dist/assets/app.* ../assets/
