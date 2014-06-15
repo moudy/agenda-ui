@@ -2,8 +2,8 @@
 
 A UI to view [Agenda](https://github.com/rschmukler/agenda) jobs.
 
-### This is still very much a work in progress
-It's better than nothing but still pretty rough. I'm open to suggestions and pull requests.
+![Agenda UI Screenshot](https://raw.githubusercontent.com/moudy/agenda-ui/screenshot/agenda-ui-screenshot.png)
+
 
 ### Install
 ```
@@ -28,11 +28,9 @@ app.use('/agenda-ui', agendaUI(agenda, {poll: 1000}));
 The first argument is the agenda instance. The second is an options object. Currently the only options is `poll`. This sets the interval the app polls for chnages. It can also be set to `false` to not poll at all.
 
 
-### Screenshot
-![Agenda UI Screenshot](https://raw.githubusercontent.com/moudy/agenda-ui/screenshot/agenda-ui-screenshot.png)
-
 ### Todo and Ideas
 - pagination
+- more human friendly countdown time format
 - a way to view a specific job
 - run/cancel job (i.e. /jobs/:jobId)
 - tests
