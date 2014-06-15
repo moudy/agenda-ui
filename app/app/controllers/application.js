@@ -6,8 +6,13 @@ export default Ember.Controller.extend({
 
 , isFailedFilter: Ember.computed.equal('filter', 'failed')
 
+, meta: function () {
+    return Ember.copy(this.store.metadataFor('job'));
+  }.property('currentDefinition', 'filter')
+
 , definitions: function () {
-    return this.store.all('definition');
+    var definitions = this.store.all('definition');
+    return definitions.sortBy('sortValue', 'count', 'id');
   }.property()
 
 , actions: {
@@ -15,7 +20,7 @@ export default Ember.Controller.extend({
       this.set('currentDefinition', null);
 
       if (definition) {
-        this.transitionToRoute('definition', definition.get('id'));
+        this.transitionToRoute('index', definition.get('id'));
       } else {
         this.transitionToRoute('index');
       }

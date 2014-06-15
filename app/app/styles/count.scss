@@ -1,0 +1,16 @@
+@import 'variables';
+
+.count {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  @include font-size(1.2);
+  color: $light-text-color;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  background-color: $background-color;
+  margin-left: 10px;
+  border-radius: 10px;
+}

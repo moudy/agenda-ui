@@ -59,6 +59,10 @@ body {
   &.is-active {
     color: #fff;
     background-color: $active-color;
+    .count {
+      color: white;
+      background-color: darken($active-color, 15%);
+    }
   }
   &:active {
     background-color: lighten($active-color, 5%);
@@ -68,3 +72,4 @@ body {
 @import 'header';
 @import 'sidebar';
 @import 'job-card';
+@import 'count';

@@ -15,4 +15,8 @@
   padding: 10px;
   color: inherit;
   border-bottom: 1px solid $border-color;
+
+  .count {
+    float: right;
+  }
 }
