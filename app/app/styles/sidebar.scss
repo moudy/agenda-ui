@@ -14,9 +14,22 @@
   background-color: white;
   padding: 10px;
   color: inherit;
+  position: relative;
   border-bottom: 1px solid $border-color;
 
   .count {
-    float: right;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .name-container {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 35px;
   }
 }

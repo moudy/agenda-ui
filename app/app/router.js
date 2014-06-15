@@ -1,8 +1,9 @@
 var Router = Ember.Router.extend({
 
-  location: 'auto'
+// TODO - figure out why this doesn't work when mounted on another app
+// location: 'auto'
 
-, rootUrl: '/' + Ember.ENV.NAMESPACE + '/'
+  rootUrl: '/' + Ember.ENV.NAMESPACE + '/'
 
 });
 
