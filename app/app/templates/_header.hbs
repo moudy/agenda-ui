@@ -6,13 +6,13 @@
 
   <div class='filter-controls'>
 
-    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control isFutureFilter:is-active'}}>
+    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control :btn isFutureFilter:is-active'}}>
       Future
     <a>
-    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control isCompleteFilter:is-active'}}>
+    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control :btn isCompleteFilter:is-active'}}>
       Completed
     <a>
-    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control isFailedFilter:is-active'}}>
+    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control :btn isFailedFilter:is-active'}}>
       Failed
     <a>
 

@@ -13,18 +13,6 @@
   display: block;
   background-color: white;
   padding: 10px;
-  text-decoration: none;
   color: inherit;
   border-bottom: 1px solid $border-color;
-  cursor: pointer;
-  color: $light-text-color;
-
-  &.is-active {
-    color: #000;
-    background-color: $active-color;
-  }
-  &:active {
-    background-color: lighten($active-color, 5%);
-  }
 }
-

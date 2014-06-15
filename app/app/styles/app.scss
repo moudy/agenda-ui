@@ -46,6 +46,25 @@ body {
   margin-left: $sidebar-width + 20px;
 }
 
+.btn {
+  font-weight: 700;
+  cursor: pointer;
+  color: $light-text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.is-active {
+    color: #fff;
+    background-color: $active-color;
+  }
+  &:active {
+    background-color: lighten($active-color, 5%);
+  }
+}
+
 @import 'header';
 @import 'sidebar';
 @import 'job-card';

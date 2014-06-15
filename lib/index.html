@@ -12,6 +12,7 @@
       ENV.NAMESPACE = "<%= options.NAMESPACE %>";
       ENV.POLL_INTERVAL = <%= options.POLL_INTERVAL %>;
     </script>
+    <script src="<%= options.ASSETS_NAMESPACE %>/assets/vendor.js"></script>
     <script src="<%= options.ASSETS_NAMESPACE %>/assets/app.js"></script>
     <script>
       window.App = require('app/app')['default'].create();

@@ -2,7 +2,7 @@ export default Ember.Component.extend({
 
   tagName: 'a'
 
-, classNames: ['nav-link']
+, classNames: ['nav-link', 'btn']
 
 , classNameBindings: ['isActive']
 

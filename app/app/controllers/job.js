@@ -1,3 +1,11 @@
+var PRIORITY_MAP = {
+  '20': 'highest'
+, '10': 'high'
+, '0': 'default'
+, '-10': 'low'
+, '-20': 'lowest'
+};
+
 var JobController = Ember.ObjectController.extend({
 
   nextRunAtFromNow: function () {
@@ -8,6 +16,10 @@ var JobController = Ember.ObjectController.extend({
     if (ret < 0) ret = 0;
     return ret;
   }.property('clock.second')
+
+, priorityHuman: function () {
+    return PRIORITY_MAP[this.get('priority')];
+  }.property('priority')
 
 , isRunning: Em.computed.bool('lockedAt')
 

@@ -1,10 +1,13 @@
 @import 'variables';
 
 .job-card {
-  border: 1px solid $border-color;
-  background-color: white;
   margin-bottom: 30px;
   display: block;
+}
+
+.job-card-container {
+  border: 1px solid $border-color;
+  background-color: white;
   position: relative;
 
   .repeat-icon {
@@ -19,7 +22,6 @@
   }
 
   &.is-finished {
-    opacity: 0.4;
   }
 
   &:hover {
@@ -28,6 +30,15 @@
 
   &.is-running {
     background-color: rgb(254, 255, 223);
+  }
+
+  .meta {
+    margin-top: 5px;
+    @include font-size(1.2);
+  }
+
+  .meta-item {
+    display: inline-block;
   }
 }
 
@@ -45,7 +56,31 @@
 .job-card-name {
   font-weight: 200;
   margin: 0;
+  color: #000;
   @include font-size(1.6);
+  .fail-message {
+    display: inline-block;
+    margin-left: 5px;
+    line-height: inherit;
+  }
+}
+
+.fail-message {
+  line-height: 28px;
+  position: relative;
+  padding: 4px;
+  background: rgb(255, 255, 249);
+  border: 1px solid $fail-color;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.fail-icon {
+  @include font-size(1.8);
+  position: relative;
+  top: 1px;
+  font-weight: 700px;
+  color: $fail-color;
 }
 
 .job-data-preview {
@@ -92,3 +127,28 @@
   }
 }
 
+$priority-color-low: $light-text-color;
+$priority-color-high: rgb(194, 124, 0);
+$priority-color-highest: rgb(255, 0, 0);
+
+.meta-item {
+  text-transform: capitalize;
+}
+
+.times {
+  @include font-size(1.2);
+  padding: 10px;
+  .time-container {
+    display: block;
+  }
+}
+
+.priority.highest {
+  color: $priority-color-highest;
+}
+.priority.high {
+  color: $priority-color-high;
+}
+.priority.low, .priority.lowest {
+  color: $priority-color-low;
+}
