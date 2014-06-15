@@ -37,6 +37,7 @@
   "dependencies": {
     "ejs": "^1.0.0",
     "express": "^4.3.2",
+    "rsvp": "^3.0.9",
     "speakingurl": "^0.9.1"
   }
 }
