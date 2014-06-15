@@ -11,9 +11,28 @@
 }
 
 .app-title {
+  $logo-size: 41px;
   padding: 10px;
+  padding-left: $logo-size + 10px;
+  position: relative;
   margin: 0;
   @include font-size(1.8);
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .logo {
+    width: $logo-size;
+    line-height: $logo-size;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    display: block;
+    text-align: center;
+    @include font-size(3.0);
+  }
 }
 
 .filter-controls {

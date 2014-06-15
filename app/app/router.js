@@ -1,8 +1,8 @@
 var Router = Ember.Router.extend({
 
-  //location: 'auto'
+  location: 'auto'
 
-  rootUrl: '/' + Ember.ENV.NAMESPACE + '/'
+, rootUrl: '/' + Ember.ENV.NAMESPACE + '/'
 
 });
 
