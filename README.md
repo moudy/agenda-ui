@@ -34,7 +34,7 @@ The first argument is the agenda instance. The second is an options object. Curr
 ### Todo and Ideas
 - pagination
 - a way to view a specific job
-- run/cancel job
+- run/cancel job (i.e. /jobs/:jobId)
 - tests
 
 
