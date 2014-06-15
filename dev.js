@@ -7,38 +7,40 @@ var app = express();
 var agenda = new Agenda({db: { address: 'localhost:27017/agenda-ui-development'}});
 agenda._db.remove(function () {
 
-  agenda.define('send email', function(job, done) {
-    console.log('Delete old users', job.attrs.data);
+  agenda.define('Send Email', {priority: 'highest'}, function(job, done) {
+    console.log('Send Email', job.attrs.data);
     setTimeout(done, 1000);
   });
 
-  agenda.define('delete users', function(job, done) {
-    console.log('Update users', job.attrs.data);
-    setTimeout(done, 3000);
+  agenda.define('Delete Users', function(job, done) {
+    console.log('Delete users', job.attrs.data);
+    setTimeout(done.bind(null, new Error('Error deleting users')), 3000);
   });
 
-  agenda.define('run analytics', function(job, done) {
-    console.log('Send email', job.attrs.data);
+  agenda.define('Run Analytics', function(job, done) {
+    console.log('Run Analytics', job.attrs.data);
     setTimeout(done, 2000);
   });
 
-  agenda.schedule('in 25 seconds', 'send email', {
+  agenda.schedule('in 25 seconds', 'Send Email', {
     to: 'admin@example.com'
   , subject: 'Report'
   });
 
-  agenda.every('18 seconds', 'delete users', {
+  agenda.every('18 seconds', 'Delete Users', {
     inactive: true
   , paying: false
   });
 
-  agenda.every('1 minute', 'run analytics', {
-    type: 'engadgemant'
+  agenda.every('1 minute', 'Run Analytics', {
+    type: 'engagement'
   , email: 'team'
   });
 
-  app.use('/agenda-ui/assets', require('broccoli-middleware'));
-  app.use('/agenda-ui', agendaUI(agenda, {poll: 1000}));
+  app.use('/', agendaUI(agenda, {
+    poll: 2000
+  , ASSET_HOST: '//localhost:4200'
+  }));
 
   agenda.start();
 

@@ -1,6 +1,4 @@
 /tmp
-/app/js
-/app/css
-/app/templates
-/Brocfile.js
+/app
 /dev.js
+/scripts

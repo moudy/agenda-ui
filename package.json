@@ -1,12 +1,12 @@
 {
   "name": "agenda-ui",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "UI for Agenda",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "dev": "nodemon --ignore tmp/ --ignore node_modules/ dev.js",
-    "prepublish": "rm -rf ./assets && BROCCOLI_ENV=production broccoli build assets"
+    "dev": "nodemon --ignore tmp/ --ignore app/ --ignore node_modules/ dev.js",
+    "prepublish": "./scripts/build"
   },
   "keywords": [
     "agenda"
@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "ejs": "^1.0.0",
-    "express": "^4.3.2"
+    "express": "^4.3.2",
+    "rsvp": "^3.0.9",
+    "speakingurl": "^0.9.1"
   }
 }

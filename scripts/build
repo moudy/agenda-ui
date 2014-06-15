@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+rm -rf ./assets
+mkdir -p ./assets
+cd app
+ember build --environment=production
+mv ./dist/assets/app.* ../assets/
+mv ./dist/assets/vendor* ../assets/

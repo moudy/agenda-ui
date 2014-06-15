@@ -1,0 +1,18 @@
+{{partial 'header'}}
+
+<div class='content-width content'>
+  <nav class='sidebar-nav'>
+
+    {{#each definition in definitions}}
+      {{nav-link
+        model=definition
+        action='setDefinition'
+        currentDefinitionId=currentDefinition.id}}
+    {{/each}}
+
+  </nav>
+
+  <div class='jobs-feed'>
+    {{outlet}}
+  </div>
+</div>

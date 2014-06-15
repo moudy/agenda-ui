@@ -1,0 +1,29 @@
+<header class='header'>
+<div class='content-width header-content'>
+  <h1 class='app-title'>
+    {{#link-to 'index'}}
+      <span class='logo'>
+        &#9997;
+      </span>
+      Agenda UI
+    {{/link-to}}
+  </h1>
+
+  <div class='filter-controls'>
+
+    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control :btn isFutureFilter:is-active'}}>
+      Future
+      <span class='count'>{{meta.future}}</span>
+    </a>
+    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control :btn isCompleteFilter:is-active'}}>
+      Completed
+      <span class='count'>{{meta.completed}}</span>
+    </a>
+    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control :btn isFailedFilter:is-active'}}>
+      Failed
+      <span class='count'>{{meta.failed}}</span>
+    </a>
+
+  </div>
+</div>
+</header>

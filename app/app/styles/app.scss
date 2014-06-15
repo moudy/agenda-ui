@@ -1,0 +1,75 @@
+@import './vendor/normalize';
+@import './vendor/highlight';
+@import 'variables';
+@import 'mixins';
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  background-color: $background-color;
+}
+
+body {
+  color: #444;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 200;
+  @include font-size(1.4);
+}
+
+.content-width {
+  max-width: $content-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.content {
+  padding: 30px 10px;
+}
+
+.jobs-feed {
+  margin-left: $sidebar-width + 20px;
+}
+
+.btn {
+  font-weight: 700;
+  cursor: pointer;
+  color: $light-text-color;
+  text-decoration: none;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.is-active {
+    color: #fff;
+    background-color: $active-color;
+    .count {
+      color: white;
+      background-color: darken($active-color, 15%);
+    }
+  }
+  &:active {
+    background-color: lighten($active-color, 5%);
+  }
+}
+
+@import 'header';
+@import 'sidebar';
+@import 'job-card';
+@import 'count';

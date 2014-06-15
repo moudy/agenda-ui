@@ -1,0 +1,154 @@
+@import 'variables';
+
+.job-card {
+  margin-bottom: 30px;
+  display: block;
+}
+
+.job-card-container {
+  border: 1px solid $border-color;
+  background-color: white;
+  position: relative;
+
+  .repeat-icon {
+    $size: 20px;
+    width: $size;
+    height: $size;
+    right: - $size - 10px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right:
+  }
+
+  &.is-finished {
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &.is-running {
+    background-color: rgb(254, 255, 223);
+  }
+
+  .meta {
+    margin-top: 5px;
+    @include font-size(1.2);
+  }
+
+  .meta-item {
+    display: inline-block;
+  }
+}
+
+.job-card-content {
+  padding: 10px;
+  position: relative;
+  .next-run-counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+  }
+}
+
+.job-card-name {
+  font-weight: 200;
+  margin: 0;
+  color: #000;
+  @include font-size(1.6);
+  .fail-message {
+    display: inline-block;
+    margin-left: 5px;
+    line-height: inherit;
+  }
+}
+
+.fail-message {
+  line-height: 28px;
+  position: relative;
+  padding: 4px;
+  background: rgb(255, 255, 249);
+  border: 1px solid $fail-color;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.fail-icon {
+  @include font-size(1.8);
+  position: relative;
+  top: 1px;
+  font-weight: 700px;
+  color: $fail-color;
+}
+
+.job-data-preview {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  word-wrap: normal;
+  background-color: #f8f8f8;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+  white-space: nowrap;
+  cursor: pointer;
+  @include font-size(1.3);
+
+  &.is-expanded {
+    white-space: pre;
+  }
+}
+
+.details-link {
+  text-decoration: none;
+  color: $light-text-color;
+  @include font-size(1.1);
+}
+
+.job-details {
+  .details {
+    display: none;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    @include font-size(1.3);
+  }
+
+  label {
+    width: 110px;
+    text-align: right;
+    display: inline-block;
+    color: #999;
+    margin-right: 4px;
+  }
+
+  &.is-expanded .details {
+    display: block;
+  }
+}
+
+$priority-color-low: $light-text-color;
+$priority-color-high: rgb(194, 124, 0);
+$priority-color-highest: rgb(255, 0, 0);
+
+.meta-item {
+  text-transform: capitalize;
+}
+
+.times {
+  @include font-size(1.2);
+  padding: 10px;
+  .time-container {
+    display: block;
+  }
+}
+
+.priority.highest {
+  color: $priority-color-highest;
+}
+.priority.high {
+  color: $priority-color-high;
+}
+.priority.low, .priority.lowest {
+  color: $priority-color-low;
+}
