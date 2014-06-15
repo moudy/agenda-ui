@@ -32,11 +32,9 @@ The first argument is the agenda instance. The second is an options object. Curr
 ![Agenda UI Screenshot](https://raw.githubusercontent.com/moudy/agenda-ui/screenshot/agenda-ui-screenshot.png)
 
 ### Todo and Ideas
-- browse by name, type, etc.
 - pagination
 - a way to view a specific job
-- general UI polish
-- better dev workflow
+- run/cancel job
 - tests
 
 
