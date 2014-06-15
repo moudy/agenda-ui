@@ -5,7 +5,7 @@ export default Ember.ArrayController.extend({
 , filterBinding: 'controllers.application.filter'
 
 , fetch: function () {
-    this.send('updateJobs');
+    this.send('updateData');
   }.observes('filter')
 
 });

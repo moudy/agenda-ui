@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 
 , meta: function () {
     return Ember.copy(this.store.metadataFor('job'));
-  }.property('currentDefinition', 'filter')
+  }.property('currentDefinition', 'filter', 'pollCount')
 
 , definitions: function () {
     var definitions = this.store.all('definition');
@@ -20,7 +20,7 @@ export default Ember.Controller.extend({
       this.set('currentDefinition', null);
 
       if (definition) {
-        this.transitionToRoute('index', definition.get('id'));
+        this.transitionToRoute('jobs', definition.get('id'));
       } else {
         this.transitionToRoute('index');
       }
