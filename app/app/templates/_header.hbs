@@ -1,29 +1,33 @@
-<header class='header'>
-<div class='content-width header-content'>
-  <h1 class='app-title'>
-    {{#link-to 'index'}}
+<header class='navbar navbar-default navbar-fixed-top'>
+<div class='container'>
+  <div class='navbar-header'>
+    {{#link-to 'index' class='navbar-brand'}}
       <span class='logo'>
         &#9997;
       </span>
       Agenda UI
     {{/link-to}}
-  </h1>
-
-  <div class='filter-controls'>
-
-    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control :btn isFutureFilter:is-active'}}>
-      Future
-      <span class='count'>{{meta.future}}</span>
-    </a>
-    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control :btn isCompleteFilter:is-active'}}>
-      Completed
-      <span class='count'>{{meta.completed}}</span>
-    </a>
-    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control :btn isFailedFilter:is-active'}}>
-      Failed
-      <span class='count'>{{meta.failed}}</span>
-    </a>
-
   </div>
+
+  <ul class='nav navbar-nav navbar-right'>
+    <li {{bind-attr class='isFutureFilter:active'}}>
+      <a {{action 'setFilter' 'future'}}>
+        Future
+        <span class='badge'>{{meta.future}}</span>
+      </a>
+    </li>
+    <li {{bind-attr class='isCompleteFilter:active'}}>
+      <a {{action 'setFilter' 'completed'}}>
+        Completed
+        <span class='badge'>{{meta.completed}}</span>
+      </a>
+    </li>
+    <li {{bind-attr class='isFailedFilter:active'}}>
+      <a {{action 'setFilter' 'failed'}}>
+        Failed
+        <span class='badge'>{{meta.failed}}</span>
+      </a>
+    </li>
+  </ul>
 </div>
 </header>

@@ -38,7 +38,7 @@ agenda._db.remove(function () {
   });
 
   app.use('/', agendaUI(agenda, {
-    poll: 2000
+    poll: false
   , ASSET_HOST: '//localhost:4200'
   }));
 

@@ -1,75 +1,49 @@
-@import './vendor/normalize';
-@import './vendor/highlight';
 @import 'variables';
-@import 'mixins';
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-html {
-  font-size: 62.5%;
-}
-
-html, body {
-  background-color: $background-color;
-}
+@import '../../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import './vendor/highlight';
 
 body {
-  color: #444;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 200;
-  @include font-size(1.4);
+  padding-top: $navbar-height + 20px;
 }
 
-.content-width {
-  max-width: $content-width;
-  margin-right: auto;
-  margin-left: auto;
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.content {
-  padding: 30px 10px;
-}
+.navbar-brand {
+  $logo-size: 41px;
+  position: relative;
+  padding-left: $logo-size + 10px;
 
-.jobs-feed {
-  margin-left: $sidebar-width + 20px;
-}
-
-.btn {
-  font-weight: 700;
-  cursor: pointer;
-  color: $light-text-color;
-  text-decoration: none;
-
-  &:hover {
-    color: #000;
-  }
-
-  &.is-active {
-    color: #fff;
-    background-color: $active-color;
-    .count {
-      color: white;
-      background-color: darken($active-color, 15%);
-    }
-  }
-  &:active {
-    background-color: lighten($active-color, 5%);
+  .logo {
+    width: $logo-size;
+    line-height: $logo-size;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    display: block;
+    text-align: center;
+    font-size: 30px;
   }
 }
 
-@import 'header';
-@import 'sidebar';
+.text-overflow {
+  @include text-overflow;
+}
+
+.nav > li .sidebar-nav-link {
+  padding-right: 40px;
+
+  .badge {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
 @import 'job-card';
-@import 'count';

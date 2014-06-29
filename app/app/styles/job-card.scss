@@ -34,7 +34,7 @@
 
   .meta {
     margin-top: 5px;
-    @include font-size(1.2);
+    font-size: 12px;
   }
 
   .meta-item {
@@ -57,7 +57,7 @@
   font-weight: 200;
   margin: 0;
   color: #000;
-  @include font-size(1.6);
+  font-size: 16px;
   .fail-message {
     display: inline-block;
     margin-left: 5px;
@@ -76,7 +76,7 @@
 }
 
 .fail-icon {
-  @include font-size(1.8);
+  font-size: 18px;
   position: relative;
   top: 1px;
   font-weight: 700px;
@@ -93,7 +93,7 @@
   border-radius: 3px;
   white-space: nowrap;
   cursor: pointer;
-  @include font-size(1.3);
+  font-size: 13px;
 
   &.is-expanded {
     white-space: pre;
@@ -103,7 +103,7 @@
 .details-link {
   text-decoration: none;
   color: $light-text-color;
-  @include font-size(1.1);
+  font-size: 11px;
 }
 
 .job-details {
@@ -111,7 +111,7 @@
     display: none;
     line-height: 1.4;
     margin-bottom: 10px;
-    @include font-size(1.3);
+    font-size: 13px;
   }
 
   label {
@@ -136,7 +136,7 @@ $priority-color-highest: rgb(255, 0, 0);
 }
 
 .times {
-  @include font-size(1.2);
+  font-size: 12px;
   padding: 10px;
   .time-container {
     display: block;

@@ -1,10 +1,8 @@
 export default Ember.Component.extend({
 
-  tagName: 'a'
+  tagName: 'li'
 
-, classNames: ['nav-link', 'btn']
-
-, classNameBindings: ['isActive']
+, classNameBindings: ['isActive:active']
 
 , isActive: function () {
     return this.get('currentDefinitionId') === this.get('model.id');
