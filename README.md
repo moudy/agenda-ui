@@ -31,8 +31,8 @@ The first argument is the agenda instance. The second is an options object. Curr
 ### Todo and Ideas
 - pagination
 - more human friendly countdown time format
-- a way to view a specific job
-- run/cancel job (i.e. /jobs/:jobId)
+- a way to view a specific job (i.e. /jobs/:jobId)
+- run/cancel job
 - tests
 
 
