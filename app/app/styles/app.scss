@@ -1,75 +1,90 @@
-@import './vendor/normalize';
-@import './vendor/highlight';
 @import 'variables';
-@import 'mixins';
 
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-
-html {
-  font-size: 62.5%;
-}
-
-html, body {
-  background-color: $background-color;
-}
+@import '../../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';
+@import './vendor/highlight';
 
 body {
-  color: #444;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  font-weight: 200;
-  @include font-size(1.4);
+  padding-top: $navbar-height + 20px;
 }
 
-.content-width {
-  max-width: $content-width;
-  margin-right: auto;
-  margin-left: auto;
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.content {
-  padding: 30px 10px;
+.navbar-brand {
+  $logo-size: 41px;
+  position: relative;
+  padding-left: $logo-size + 10px;
+
+  .logo {
+    width: $logo-size;
+    line-height: $logo-size;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+  }
 }
 
-.jobs-feed {
+.text-overflow {
+  @include text-overflow;
+}
+
+.nav-stacked > li {
+  a {
+    padding-right: 40px;
+
+    .badge {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+}
+
+ul.nav-filters {
+  li a {
+    .badge {
+      background-color: $gray-lighter;
+    }
+    &.text-success {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-success; }
+    }
+    &.text-info {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-info; }
+    }
+    &.text-danger {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-danger; }
+    }
+  }
+
+  li.active a {
+    &, &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+.sidebar {
+  width: $sidebar-width;
+  position: fixed;
+  top: $navbar-height + 20px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.feed {
   margin-left: $sidebar-width + 20px;
 }
 
-.btn {
-  font-weight: 700;
-  cursor: pointer;
-  color: $light-text-color;
-  text-decoration: none;
 
-  &:hover {
-    color: #000;
-  }
-
-  &.is-active {
-    color: #fff;
-    background-color: $active-color;
-    .count {
-      color: white;
-      background-color: darken($active-color, 15%);
-    }
-  }
-  &:active {
-    background-color: lighten($active-color, 5%);
-  }
-}
-
-@import 'header';
-@import 'sidebar';
 @import 'job-card';
-@import 'count';

@@ -2,7 +2,7 @@ var JobView = Ember.View.extend({
 
   templateName: 'job'
 
-, classNames: 'job-card'
+, classNames: ['panel', 'panel-default']
 
 , classNameBindings: [
     'controller.isFinished'

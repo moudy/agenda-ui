@@ -1,18 +1,53 @@
 {{partial 'header'}}
 
-<div class='content-width content'>
-  <nav class='sidebar-nav'>
+<div class='container'>
+    <aside class='sidebar'>
 
-    {{#each definition in definitions}}
-      {{nav-link
-        model=definition
-        action='setDefinition'
-        currentDefinitionId=currentDefinition.id}}
-    {{/each}}
+      <ul class="nav nav-pills nav-stacked nav-filters">
+        <li {{bind-attr class='isFutureFilter:active'}}>
+          <a class='text-info' {{action 'setFilter' 'future'}}>
+            <div class='text-overflow'>
+              Future
+            </div>
+            <span class='badge pull-right'>{{meta.future}}</span>
+          </a>
+        </li>
+        <li {{bind-attr class='isCompleteFilter:active'}}>
+          <a class='text-success' {{action 'setFilter' 'completed'}}>
+            <div class='text-overflow'>
+              Completed
+            </div>
+            <span class='badge pull-right'>{{meta.completed}}</span>
+          </a>
+        </li>
+        <li {{bind-attr class='isFailedFilter:active'}}>
+          <a class='text-danger' {{action 'setFilter' 'failed'}}>
+            <div class='text-overflow'>
+              Failed
+            </div>
+            <span class='badge pull-right'>{{meta.failed}}</span>
+          </a>
+        </li>
+      </ul>
 
-  </nav>
+      <hr />
 
-  <div class='jobs-feed'>
-    {{outlet}}
+      <ul class="nav nav-pills nav-stacked">
+
+        {{#each definition in definitions}}
+          {{nav-link
+            model=definition
+            action='setDefinition'
+            currentDefinitionId=currentDefinition.id}}
+        {{/each}}
+
+      </ul>
+
+    </aside>
+
+    <div class='feed'>
+      {{outlet}}
+    </div>
+
   </div>
 </div>

@@ -10,6 +10,7 @@ export default Ember.Route.extend({
     var definitionId = params.definition_id || 'all';
     var definition = this.store.getById('definition', definitionId);
     var applicationController = this.controllerFor('application');
+    if (POLL_INTERVAL) applicationController.set('pollInterval', POLL_INTERVAL);
 
     applicationController.setProperties({
       currentDefinition: definition

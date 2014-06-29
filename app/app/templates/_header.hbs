@@ -1,29 +1,20 @@
-<header class='header'>
-<div class='content-width header-content'>
-  <h1 class='app-title'>
-    {{#link-to 'index'}}
+<header class='navbar navbar-default navbar-fixed-top'>
+<div class='container'>
+  <div class='navbar-header'>
+    {{#link-to 'index' class='navbar-brand'}}
       <span class='logo'>
         &#9997;
       </span>
       Agenda UI
     {{/link-to}}
-  </h1>
+  </div>
 
-  <div class='filter-controls'>
-
-    <a {{action 'setFilter' 'future'}} {{bind-attr class=':filter-control :btn isFutureFilter:is-active'}}>
-      Future
-      <span class='count'>{{meta.future}}</span>
-    </a>
-    <a {{action 'setFilter' 'completed'}} {{bind-attr class=':filter-control :btn isCompleteFilter:is-active'}}>
-      Completed
-      <span class='count'>{{meta.completed}}</span>
-    </a>
-    <a {{action 'setFilter' 'failed'}} {{bind-attr class=':filter-control :btn isFailedFilter:is-active'}}>
-      Failed
-      <span class='count'>{{meta.failed}}</span>
-    </a>
-
+  <div class='navbar-text navbar-right'>
+    {{#if pollInterval}}
+      Polling for changes every {{pollInterval}}ms.
+    {{else}}
+      Not polling for changes.
+    {{/if}}
   </div>
 </div>
 </header>

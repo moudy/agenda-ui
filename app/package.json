@@ -20,10 +20,10 @@
   "devDependencies": {
     "body-parser": "^1.2.0",
     "broccoli-ember-hbs-template-compiler": "^1.5.0",
-    "broccoli-sass": "^0.1.4",
-    "ember-cli": "0.0.34",
+    "broccoli-sass": "^0.2.0",
+    "ember-cli": "0.0.37",
     "express": "^4.1.1",
-    "glob": "^3.2.9",
+    "glob": "^4.0.2",
     "loom-generators-ember-appkit": "^1.1.1",
     "originate": "0.1.5"
   }

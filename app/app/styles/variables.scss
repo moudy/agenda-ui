@@ -1,8 +1,21 @@
-$background-color: rgb(235, 235, 235);
+$background-color: white;
 $border-color: #ddd;
-$active-color: #12A1FF;
+$brand-color: #12A1FF;
+$active-color: $brand-color;
 $fail-color: #ccbb00;
 $light-text-color: #777;
+$sidebar-width: 250px;
 
-$content-width: 900px;
-$sidebar-width: 200px;
+// Customize bootstrap
+$grid-float-breakpoint: 100px;
+$navbar-default-brand-color: $brand-color;
+$brand-primary: $brand-color;
+$font-family-base: "Proxima Nova", "Helvetica Neue";
+$text-color: #7F8B91;
+$body-bg: $background-color;
+$navbar-default-bg: white;
+
+$font-size-h1: 36px;
+$font-size-h2: 22px;
+$font-size-h3: 16px;
+
