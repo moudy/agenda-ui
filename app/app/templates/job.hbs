@@ -1,17 +1,7 @@
-<div class='job-card-container'>
-  <div class='job-card-content'>
-    <h3 class='job-card-name'>
+  <div class="panel-heading">
+    <h3 class="panel-title">
       {{name}}
-    </h3>
-
-    {{#if nextRunAtFromNow}}
-    <div class='next-run-counter'>
-      {{nextRunAtFromNow}}
-    </div>
-    {{/if}}
-
-    <div class='meta'>
-
+      <small>
       {{#if repeatInterval}}
         <span class='meta-item'>
           &#10561; Repeats: {{repeatInterval}}
@@ -23,18 +13,24 @@
       <span class='meta-item'>
         <span {{bind-attr class=':priority priorityHuman'}}>&#9187;</span> Priority: {{priorityHuman}}
       </span>
-    </div>
+      </small>
+    </h3>
 
+      {{#if nextRunAtFromNow}}
+      <small class='next-run-counter'>
+        {{nextRunAtFromNow}}
+      </small>
+      {{/if}}
   </div>
-
     {{#if failedAt}}
       <div class='fail-message bg-warning'>
         <span class='fail-icon'>&#9888;</span> {{failReason}} at {{time-tag failedAt}}
       </div>
     {{/if}}
+  <div class="panel-body">
+    <div class='meta'>
 
-
-  <div {{action 'toggleDataExpand'}} {{bind-attr class=':job-data-preview dataExpanded:is-expanded'}}>{{highlight-object data null 2}}</div>
+    </div>
 
 <div class='times'>
 {{time-tag lastRunAt prefix='Last:'}}
@@ -42,5 +38,13 @@
 {{time-tag lastFinishedAt prefix='Finished:'}}
 {{time-tag lockedAt prefix='Locked:'}}
 </div>
-</div>
+
+  </div>
+
+  </div>
+  <div {{action 'toggleDataExpand'}} {{bind-attr class=':job-data-preview :panel-footer dataExpanded:is-expanded'}}>{{highlight-object data null 2}}</div>
+
+
+
+
 

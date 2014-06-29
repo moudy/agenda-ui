@@ -1,69 +1,5 @@
 @import 'variables';
 
-.job-card {
-  margin-bottom: 30px;
-  display: block;
-}
-
-.job-card-container {
-  border: 1px solid $border-color;
-  background-color: white;
-  position: relative;
-
-  .repeat-icon {
-    $size: 20px;
-    width: $size;
-    height: $size;
-    right: - $size - 10px;
-    display: block;
-    position: absolute;
-    top: 0;
-    right:
-  }
-
-  &.is-finished {
-  }
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &.is-running {
-    background-color: rgb(254, 255, 223);
-  }
-
-  .meta {
-    margin-top: 5px;
-    font-size: 12px;
-  }
-
-  .meta-item {
-    display: inline-block;
-  }
-}
-
-.job-card-content {
-  padding: 10px;
-  position: relative;
-  .next-run-counter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-  }
-}
-
-.job-card-name {
-  font-weight: 200;
-  margin: 0;
-  color: #000;
-  font-size: 16px;
-  .fail-message {
-    display: inline-block;
-    margin-left: 5px;
-    line-height: inherit;
-  }
-}
 
 .fail-message {
   line-height: 28px;
@@ -77,6 +13,16 @@
   top: 1px;
   font-weight: 700px;
   color: $brand-warning;
+}
+
+.panel-heading {
+  position: relative;
+}
+
+.next-run-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .job-data-preview {
@@ -132,8 +78,6 @@ $priority-color-highest: rgb(255, 0, 0);
 }
 
 .times {
-  font-size: 12px;
-  padding: 10px;
   .time-container {
     display: block;
   }
