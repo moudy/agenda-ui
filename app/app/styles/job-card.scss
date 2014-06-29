@@ -68,11 +68,7 @@
 .fail-message {
   line-height: 28px;
   position: relative;
-  padding: 4px;
-  background: rgb(255, 255, 249);
-  border: 1px solid $fail-color;
-  border-radius: 8px;
-  margin: 10px 0;
+  padding: 10px;
 }
 
 .fail-icon {
@@ -80,7 +76,7 @@
   position: relative;
   top: 1px;
   font-weight: 700px;
-  color: $fail-color;
+  color: $brand-warning;
 }
 
 .job-data-preview {

@@ -9,25 +9,12 @@
     {{/link-to}}
   </div>
 
-  <ul class='nav navbar-nav navbar-right'>
-    <li {{bind-attr class='isFutureFilter:active'}}>
-      <a {{action 'setFilter' 'future'}}>
-        Future
-        <span class='badge'>{{meta.future}}</span>
-      </a>
-    </li>
-    <li {{bind-attr class='isCompleteFilter:active'}}>
-      <a {{action 'setFilter' 'completed'}}>
-        Completed
-        <span class='badge'>{{meta.completed}}</span>
-      </a>
-    </li>
-    <li {{bind-attr class='isFailedFilter:active'}}>
-      <a {{action 'setFilter' 'failed'}}>
-        Failed
-        <span class='badge'>{{meta.failed}}</span>
-      </a>
-    </li>
-  </ul>
+  <div class='navbar-text navbar-right'>
+    {{#if pollInterval}}
+      Polling for changes every {{pollInterval}}ms.
+    {{else}}
+      Not polling for changes.
+    {{/if}}
+  </div>
 </div>
 </header>

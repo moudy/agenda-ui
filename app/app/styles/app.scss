@@ -34,16 +34,46 @@ ul, ol {
   @include text-overflow;
 }
 
-.nav > li .sidebar-nav-link {
-  padding-right: 40px;
+.nav-stacked > li {
+  a {
+    padding-right: 40px;
 
-  .badge {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+    .badge {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
   }
 }
+
+ul.nav-filters {
+  li a {
+    .badge {
+      background-color: $gray-lighter;
+    }
+    &.text-success {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-success; }
+    }
+    &.text-info {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-info; }
+    }
+    &.text-danger {
+      .badge { color: inherit; }
+      &, &:hover { color: $brand-danger; }
+    }
+  }
+
+  li.active a {
+    &, &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+}
+
+
 
 @import 'job-card';

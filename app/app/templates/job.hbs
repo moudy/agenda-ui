@@ -4,12 +4,6 @@
       {{name}}
     </h3>
 
-    {{#if failedAt}}
-      <div class='fail-message'>
-        <span class='fail-icon'>&#9888;</span> {{failReason}} at {{time-tag failedAt}}
-      </div>
-    {{/if}}
-
     {{#if nextRunAtFromNow}}
     <div class='next-run-counter'>
       {{nextRunAtFromNow}}
@@ -32,6 +26,13 @@
     </div>
 
   </div>
+
+    {{#if failedAt}}
+      <div class='fail-message bg-warning'>
+        <span class='fail-icon'>&#9888;</span> {{failReason}} at {{time-tag failedAt}}
+      </div>
+    {{/if}}
+
 
   <div {{action 'toggleDataExpand'}} {{bind-attr class=':job-data-preview dataExpanded:is-expanded'}}>{{highlight-object data null 2}}</div>
 
