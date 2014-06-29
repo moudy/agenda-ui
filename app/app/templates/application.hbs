@@ -1,8 +1,7 @@
 {{partial 'header'}}
 
 <div class='container'>
-  <div class='row'>
-    <div class='col-md-3'>
+    <aside class='sidebar'>
 
       <ul class="nav nav-pills nav-stacked nav-filters">
         <li {{bind-attr class='isFutureFilter:active'}}>
@@ -44,9 +43,9 @@
 
       </ul>
 
-    </div>
+    </aside>
 
-    <div class='col-md-9'>
+    <div class='feed'>
       {{outlet}}
     </div>
 

@@ -74,6 +74,17 @@ ul.nav-filters {
   }
 }
 
+.sidebar {
+  width: $sidebar-width;
+  position: fixed;
+  top: $navbar-height + 20px;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.feed {
+  margin-left: $sidebar-width + 20px;
+}
 
 
 @import 'job-card';
