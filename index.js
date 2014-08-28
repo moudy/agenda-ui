@@ -20,7 +20,7 @@ module.exports = function (agenda, options) {
   var app = options.app;
   var indexHTML = path.join(__dirname, 'lib', 'index.html');
 
-  var router = express.Router();
+  var router = require('express').Router();
 
   router.get('/:definitionId?', function (req, res) {
     var data = {};
