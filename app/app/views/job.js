@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 var JobView = Ember.View.extend({
 
   templateName: 'job'

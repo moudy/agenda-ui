@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 var JobsView = Ember.CollectionView.extend({
 
   tagName: 'ul'

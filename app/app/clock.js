@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 var TICK_INTERVAL = 500;
 
 export default Ember.Object.extend({

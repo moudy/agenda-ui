@@ -1,3 +1,5 @@
+import Ember from 'ember';
+
 var PRIORITY_MAP = {
   '20': 'highest'
 , '10': 'high'
@@ -13,7 +15,9 @@ var JobController = Ember.ObjectController.extend({
     var now = moment.utc();
     var diff = next.diff(now);
     var ret = Math.floor(diff / 1000);
-    if (ret < 0) ret = 0;
+    if (ret < 0) {
+      ret = 0;
+    }
     return ret;
   }.property('clock.second')
 
@@ -21,7 +25,7 @@ var JobController = Ember.ObjectController.extend({
     return PRIORITY_MAP[this.get('priority')];
   }.property('priority')
 
-, isRunning: Em.computed.bool('lockedAt')
+, isRunning: Ember.computed.bool('lockedAt')
 
 , actions: {
     toggleDataExpand: function () {
