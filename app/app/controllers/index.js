@@ -1,13 +1,17 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.ObjectController.extend({
 
-  needs: ['application']
+  queryParams: ['filter', 'job']
 
-, filterBinding: 'controllers.application.filter'
+, filter: 'future'
 
-, fetch: function () {
-    this.send('updateData');
-  }.observes('filter')
+, job: 'all'
+
+, pollCount: 0
+
+, meta: function () {
+    return this.store.metadataFor('job');
+  }.property('job', 'filter', 'jobs')
 
 });

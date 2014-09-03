@@ -5,44 +5,40 @@ var POLL_INTERVAL = Ember.ENV.POLL_INTERVAL;
 export default Ember.Route.extend({
 
   activate: function () {
+    Ember.run.cancel(this.timer);
     if (POLL_INTERVAL) {
       this.poll();
     }
   }
 
-, model: function (params) {
-    var definitionId = params.definition_id || 'all';
-    var definition = this.store.getById('definition', definitionId);
-    var applicationController = this.controllerFor('application');
-    if (POLL_INTERVAL) {
-      applicationController.set('pollInterval', POLL_INTERVAL);
+, queryParams: {
+    filter: {
+      refreshModel: true
     }
+  , job: {
+      refreshModel: true
+    }
+  }
 
-    applicationController.setProperties({
-      currentDefinition: definition
-    });
+, model: function (params) {
+    var definition = this.store.getById('definition', params.job);
 
-    var filter = applicationController.get('filter');
+    var query = {
+      filter: params.filter
+    , name: definition.get('name')
+    };
 
-    return this.store.find('job', {
-      name: definition.get('name')
-    , filter: filter
+    return Ember.RSVP.hash({
+      definitions: this.store.all('definition').sortBy('sortValue', 'id')
+    , jobs: this.store.find('job', query)
     });
   }
 
 , poll: function () {
-    var applicationController = this.controllerFor('application');
-    applicationController.incrementProperty('pollCount');
-    Ember.run.later(this, function () {
+    this.timer = Ember.run.later(this, function () {
+      console.log('polling');
       this.refresh().then(this.poll.bind(this));
     }, POLL_INTERVAL);
   }
-
-, actions: {
-    updateData: function () {
-      this.refresh();
-    }
-  }
-
 
 });

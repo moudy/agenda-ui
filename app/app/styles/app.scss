@@ -49,9 +49,11 @@ ul, ol {
 }
 
 ul.nav-filters {
-  li a {
+  li {
+    a { color: inherit; }
     .badge {
-      background-color: $gray-lighter;
+      color: $text-color;
+      background-color: darken($gray-lighter, 5%);
     }
     &.text-success {
       .badge { color: inherit; }
@@ -67,9 +69,10 @@ ul.nav-filters {
     }
   }
 
-  li.active a {
-    &, &:hover {
-      background-color: $gray-lighter;
+  a {
+    &:hover { background-color: lighten($gray-lighter, 5%); }
+    &.active {
+      &, &:hover { background-color: $gray-lighter; }
     }
   }
 }
@@ -85,6 +88,5 @@ ul.nav-filters {
 .feed {
   margin-left: $sidebar-width + 20px;
 }
-
 
 @import 'job-card';

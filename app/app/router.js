@@ -10,7 +10,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('jobs', {path: '/:definition_id'});
+  this.route('application');
 });
 
 export default Router;

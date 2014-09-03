@@ -1,0 +1,37 @@
+<aside class='sidebar'>
+
+  <ul class="nav nav-pills nav-stacked nav-filters">
+    <li class='text-info'>
+      {{#link-to 'index' (query-params filter='future')}}
+        <div class='text-overflow'>Future</div>
+        <span class='badge pull-right'>{{meta.future}}</span>
+      {{/link-to}}
+    </li>
+    <li class='text-success'>
+      {{#link-to 'index' (query-params filter='completed')}}
+        <div class='text-overflow'>Completed</div>
+        <span class='badge pull-right'>{{meta.completed}}</span>
+      {{/link-to}}
+    </li>
+    <li class='text-danger'>
+      {{#link-to 'index' (query-params filter='failed')}}
+        <div class='text-overflow'>Failed</div>
+        <span class='badge pull-right'>{{meta.failed}}</span>
+      {{/link-to}}
+    </li>
+
+  <hr />
+
+  <ul class="nav nav-pills nav-stacked">
+    {{#each definition in definitions}}
+      <li>
+        {{#link-to 'index' (query-params job=definition.id)}}
+          <div class='text-overflow'>{{definition.name}}</div>
+          <span class='badge pull-right'>{{definition.count}}</span>
+        {{/link-to}}
+      </li>
+    {{/each}}
+  </ul>
+
+</aside>
+
