@@ -1,28 +1,19 @@
 import Ember from 'ember';
 
-export default Ember.ArrayController.extend({
+export default Ember.Controller.extend({
 
-  itemController: 'job'
+  needs: ['jobs/feed']
 
-, sortProperties: [
-    'type'
-  , 'nextRunAt'
-  , 'isFinished'
-  ]
+, filter: 'future'
 
-, orderBy: function (a, b) {
-    var ret = 0;
+, job: 'all'
 
-    if (a.get('isFinished') && b.get('isFinished')) {
-      ret = (a.get('lastRunAt') > b.get('lastRunAt')) ? -1 : 1;
-    } else if (a.get('isFinished') || b.get('isFinished')) {
-      ret = (a.get('isFinished')) ? -1 : 1;
-    } else {
-      ret = (a.get('nextRunAt') < b.get('nextRunAt')) ? -1 : 1;
-    }
+, meta: function () {
+    return this.store.metadataFor('job');
+  }.property('controllers.jobs/feed.content', 'filter', 'job')
 
-    return ret;
-  }
+, sortedDefinitions: function () {
+    return this.get('definitions').sortBy('sortValue', 'id');
+  }.property('definitions')
 
 });
-

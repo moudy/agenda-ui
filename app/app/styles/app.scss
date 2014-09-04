@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'base';
 
 @import '../../bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap';
 @import './vendor/highlight';
@@ -42,8 +42,7 @@ ul, ol {
       position: absolute;
       right: 10px;
       top: 50%;
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
+      @include transform(translateY(-50%));
     }
   }
 }
@@ -89,4 +88,13 @@ ul.nav-filters {
   margin-left: $sidebar-width + 20px;
 }
 
+.loading-container {
+  padding: 100px;
+}
+
+.centered {
+  text-align: center;
+}
+
+@import 'loader';
 @import 'job-card';

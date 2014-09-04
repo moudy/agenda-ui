@@ -28,10 +28,7 @@ export default Ember.Route.extend({
     , name: definition.get('name')
     };
 
-    return Ember.RSVP.hash({
-      definitions: this.store.all('definition').sortBy('sortValue', 'id')
-    , jobs: this.store.find('job', query)
-    });
+    return this.store.find('job', query);
   }
 
 , poll: function () {

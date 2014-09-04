@@ -27,6 +27,7 @@
     "ember-cli-qunit": "0.0.7",
     "express": "^4.1.1",
     "glob": "^3.2.9",
+    "node-bourbon": "^1.2.3",
     "originate": "0.1.5"
   }
 }

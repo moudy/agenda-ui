@@ -11,6 +11,9 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('application');
+  this.resource('jobs', {path: '/'}, function () {
+    this.route('feed', {path: '/'});
+  });
 });
 
 export default Router;
