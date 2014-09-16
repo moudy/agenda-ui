@@ -37,4 +37,8 @@ The first argument is the agenda instance. The second is an options object. Curr
 
 
 ### Developing
-This is an Ember app that gets built on `prepublish`. To try it out locally with some sample jobs run `npm run dev` and `ember serve` in the `/app` directory. You will also need to run `npm install` and `bower install` in the `app/` directory to install the ember app's dependencies. Then go to [http://localhost:3022/](http://localhost:3022/).
+This is an Ember app that gets built on `prepublish`.
+
+To build the app, you will need Bower installed globally (`npm install bower -g`).  After Bower is available, run `npm install` and then `bower install` in the `app/` directory.
+
+To run the application locally with sample jobs, run `npm run dev` and `ember serve` in the `/app` directory, then visit [http://localhost:3022/](http://localhost:3022/).
