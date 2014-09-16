@@ -37,4 +37,4 @@ The first argument is the agenda instance. The second is an options object. Curr
 
 
 ### Developing
-This is an Ember app that gets built on `prepublish`. To try it out locally with some sample jobs run `npm run dev` and `ember serve` in the `/app` directory. Then go to [http://localhost:3022/](http://localhost:3022/agenda-ui).
+This is an Ember app that gets built on `prepublish`. To try it out locally with some sample jobs run `npm run dev` and `ember serve` in the `/app` directory. You will also need to run `npm install` and `bower install` in the `app/` directory to install the ember app's dependencies. Then go to [http://localhost:3022/](http://localhost:3022/).
