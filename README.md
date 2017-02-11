@@ -20,7 +20,7 @@ var agendaUI = require('agenda-ui');
 var app = express();
 var agenda = new Agenda(...)
 
-app.use('/agenda-ui', agendaUI(agenda, {poll: 1000}));
+app.use('/agenda-ui', agendaUI(agenda, {poll: 1000, app}));
 ```
 
 ### Documentation

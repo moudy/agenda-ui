@@ -1,20 +1,26 @@
 var path = require('path');
-var express = require('express');
 var ejs = require('ejs');
 var api = require('./lib/api');
 
 module.exports = function (agenda, options) {
-  options || (options = {});
+  options || (options = {
+    app: require('express')()
+  });
+  
+  if (typeof options.app === 'undefined' ) {
+    options.app = require('express')();
+  }
+  
   if (typeof options.poll === 'undefined') {
     options.POLL_INTERVAL = 1000;
   } else {
     options.POLL_INTERVAL = options.poll;
   }
 
-  var app = express();
+  var app = options.app;
   var indexHTML = path.join(__dirname, 'lib', 'index.html');
 
-  var router = express.Router();
+  var router = require('express').Router();
 
   router.get('/:definitionId?', function (req, res) {
     var data = {};
