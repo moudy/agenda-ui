@@ -1,3 +1,7 @@
+
+# DEPRECIATED
+Try https://github.com/agenda/agendash
+
 # Agenda UI
 
 A UI to view [Agenda](https://github.com/rschmukler/agenda) jobs.
